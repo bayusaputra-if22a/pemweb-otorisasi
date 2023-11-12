@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./plugin/css/bootstrap.min.css">
     <title>Document</title>
 </head>
 <body>
     <h1>Data produk</h1>
-    <table border="1">
-        <thead>
+    <div style="border: none !important" class="card m-1">
+      <div class="card-body">
+    <table class="table">
+        <thead class="table-primary">
             <tr>
-                <th>#</th>
-                <th>Nama produk</th>
-                <th>harga</th>
-                <th>gambar produk</th>
-                <th>Opsi</th>
+                <th scope="col">#</th>
+                <th scope="col">Nama produk</th>
+                <th scope="col">harga</th>
+                <th scope="col">gambar produk</th>
+                <th scope="col">Opsi</th>
             </tr>
         </thead>
         <tbody>
             <?php
                 require './config/db.php';
+                $base_url = "http://localhost/pemweb-otorisasi-main/";
 
                 $products = mysqli_query($db_connect,"SELECT * FROM products");
                 $no = 1;
@@ -31,16 +35,17 @@
                     <td><?=$row['name'];?></td>
                     <td><?=$row['price'];?></td>
                     <!-- <td><img src="<?=$row['image'];?>" width="100"></td> -->
-                    <td><a href="<?=$row['image'];?>" target="_blank">unduh</a></td>
+                    <td><a href="<?php echo $base_url ?><?=$row['image'];?>" target="_blank">Lihat</a></td>
                     <td>
-                        <a href="edit.php?id=<?=$row['id'];?>">Edit</a>
-                        <a href="delete.php?id=<?=$row['id'];?>">Hapus</a>
+                        <a href="backend/edit.php?id=<?=$row['id'];?>">Edit</a>
+                        <a href="backend/delete.php?id=<?=$row['id'];?>">Hapus</a>
 
                     </td>
                 </tr>
             <?php } ?>
         </tbody>
     </table>
-    
+      </div>
+    </div>
 </body>
 </html>
