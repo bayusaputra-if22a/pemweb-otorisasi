@@ -1,1 +1,26 @@
+Nama: Bayu Saputra
+Kelas: IF22A
+NIM: 22416255201285
 
+UTS Pemrograman Website
+
+1. Apa yang dimaksud dengan framework pada pengembangan aplikasi?
+(jelaskan dengan bahasa yang mudah dimengerti, bukan secara
+harfiah/istilah)
+Jawab: 
+Framework adalah alat yang dipakai dalam pembuatan situs web. Dengan memakai framework, kita nggak perlu bikin semuanya dari awal, cukup panggil kelas atau ID nya aja. Contoh simpelnya gini, bayangin lagi kita lagi pengen makan mie. Kalo nggak ada mie instan, artinya kita mesti bikin mie dari awal, mulai dari adonan mie, bumbu, dan sebagainya. Pasti itu bakalan makan waktu lumayan lama, kan? Nah, ini sama aja kaya framework, kita bisa pakai alat yang udah ada tanpa harus mulai dari nol. Misalnya, kita tinggal panggil kelas atau ID nya aja. Bayangin aja, kalo nggak ada framework, kita mesti bikin semuanya sendiri, CSS, JS, PHP, atau apapun itu, dari awal. Wah, bisa-bisa butuh waktu bertahun-tahun buat ngerjain proyek web kita sendiri tanpa framework.
+
+2.1. Sebutkan tema proyek yang sedang digarap
+Jawab: Sistem Apotek
+2.2 Sebutkan anggota dari proyek yang sedang digarap, berikut dengan
+jobdesk dari masing-masing anggota!
+Jawab: 1. Bayu Saputra Jobdesk
+       2. Muhammad Jibrail Natadilaga Jobdesk
+       3. Alya Khairunisa Jobdesk
+2.3 Jelaskan permasalahan yang didapat setelah hasil wawancara dengan
+client, beserta hipotesa solusi yang kalian usung! (jelaskan dengan
+bahasa yang mudah dimengerti, bukan secara harfiah/istilah)
+
+3. Terdapat file show.php di root proyek yang menghasilkan tabel data produk,
+Didalam nya terdapat fitur “EDIT” dan “HAPUS”. Buatkan fitur “EDIT” dan
+“HAPUS” dan unggah source code di elearning/BOC!
