@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 12 Nov 2023 pada 17.00
+-- Waktu pembuatan: 13 Nov 2023 pada 05.43
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -41,8 +41,8 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `price`, `image`, `created_at`, `updated_at`) VALUES
-(41, 'Bayu Saputra ', 321312, '/upload/1699804643-0322d80b332099b83340bb41423d938f-tugas6.1.png', '2023-11-02 06:36:06', NULL),
-(42, '370 Diamond', 777, '/upload/1699804691-fd05ef827d119d3ca5bdf6036ebfc6ac-obat3.jpeg', '2023-11-02 06:42:30', NULL);
+(51, 'Paracetamol2', 21223, '/upload/1699850145-f1b6cc08ef02e6cdab6185700fefc105-obat-bebas2.jpeg', '2023-11-13 03:27:57', NULL),
+(52, 'Pil', 62112, '/upload/1699850024-a101c67e2e99ea08e2ba9ff832df3938-obat-bebas-terbatas.webp', '2023-11-13 04:33:44', NULL);
 
 -- --------------------------------------------------------
 
@@ -66,13 +66,19 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `role`, `password`, `photo`, `created_at`, `updated_at`) VALUES
-(14, 'Bayu Saputra ', 'bayu@bayu', 'user', '$2y$10$3OW.Ubmsn9PlhjjVsHx3/.RXBfUc6cabVav5AoLGoA0m2QeBsE1NW', NULL, '2023-11-10 07:32:01', NULL),
+(14, 'Bayu Saputra ', 'bayu@bayu', 'admin', '$2y$10$3OW.Ubmsn9PlhjjVsHx3/.RXBfUc6cabVav5AoLGoA0m2QeBsE1NW', NULL, '2023-11-10 07:32:01', NULL),
 (15, 'User', 'user@user', 'user', '$2y$10$4tkZU3DmB0Mw4MBdZGQU4u5pVmXTp3jcliuk3MZDmO4GmdPDPHwKW', NULL, '2023-11-10 08:13:16', NULL),
 (16, 'Bayu Saputra ', 'bayu@uyab', 'user', '$2y$10$11PnKMEDYvozaWmvi/RsEOvonZpSxbmnKjifGgnZ/HvblPmCm0XFm', NULL, '2023-11-11 07:19:43', NULL);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indeks untuk tabel `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `users`
@@ -84,6 +90,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
+
+--
+-- AUTO_INCREMENT untuk tabel `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
