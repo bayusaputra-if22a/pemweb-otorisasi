@@ -1,3 +1,16 @@
+<?php 
+session_start();
+if ($_SESSION['role'] != 'admin') {
+    // session_destroy();
+    echo "
+    <script>
+    alert('Halaman ini hanya bisa di akses oleh admin');
+    window.location = 'profile.php';
+    </script>
+    ";
+    // header("location:profile.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +23,9 @@
     <h1>Data produk</h1>
     <div style="border: none !important" class="card m-1">
       <div class="card-body">
+        <div class="card-title d-flex justify-content-between">
+        <a class="btn btn-primary mb-2" href="backend/create.php">Tambah Data</a>
+        </div>
     <table class="table">
         <thead class="table-primary">
             <tr>
