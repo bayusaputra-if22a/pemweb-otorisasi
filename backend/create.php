@@ -1,3 +1,14 @@
+<?php 
+session_start();
+if ($_SESSION['role'] != 'admin') {
+    echo "
+    <script>
+    alert('Halaman ini hanya bisa di akses oleh admin');
+    window.location = '../profile.php';
+    </script>
+    ";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
