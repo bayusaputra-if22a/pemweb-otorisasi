@@ -29,13 +29,13 @@ if ($_SESSION['role'] != 'user') {
                 <a class="nav-link" href="#">History</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="show.php">Products</a>
+                <a class="nav-link" href="products.php">Products</a>
               </li>
             </ul>
               <a href="backend/logout.php" class="btn btn-danger">Logout</a>
           </div>
         </div>
 </nav>
-    <h1>Selamat datang user: <?php echo $_SESSION['name']?></h1>
+    <h1>Selamat datang pengguna: <?php echo $_SESSION['name']?></h1>
 </body>
 </html>
