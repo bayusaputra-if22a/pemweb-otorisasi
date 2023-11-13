@@ -10,19 +10,7 @@ if (isset($_SESSION['role'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<!-- </head>
-<body>
-    <h1>login</h1>
-    <form action="./backend/login.php" method="post">
-        <input type="email" name="email" placeholder="masukkan email anda">
-        <input type="password" name="password" placeholder="masukkan password anda">
-        <input type="submit" value="login" name="submit">
-    </form>
-
-</body>
-</html> -->
-
+    <title>Login</title>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -59,19 +47,6 @@ if (isset($_SESSION['role'])) {
                            <div class="col-md-12 text-center ">
                               <input type="submit" name="submit" class=" btn btn-block mybtn btn-primary tx-tfm" value="Login">
                            </div>
-                           <!-- <div class="col-md-12 ">
-                              <div class="login-or">
-                                 <hr class="hr-or">
-                                 <span class="span-or">or</span>
-                              </div>
-                           </div>
-                           <div class="col-md-12 mb-3">
-                              <p class="text-center">
-                                 <a href="javascript:void();" class="google btn mybtn"><i class="fa fa-google-plus">
-                                 </i> Signup using Google
-                                 </a>
-                              </p>
-                           </div> -->
                            <div class="form-group">
                               <p class="text-center">Don't have account? <a href="register.php" id="signup">Sign up here</a></p>
                            </div>
