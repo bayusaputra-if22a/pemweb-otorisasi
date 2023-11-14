@@ -1,7 +1,7 @@
 <?php 
 session_start();
 if ($_SESSION['role'] != 'user') {
-    header("location:admin.php");
+  header("location:admin.php");
 }
 ?>
 <!DOCTYPE html>
@@ -12,6 +12,31 @@ if ($_SESSION['role'] != 'user') {
     <link rel="stylesheet" href="./plugin/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Products</title>
+    <style>
+.modal-content {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+</style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -23,7 +48,7 @@ if ($_SESSION['role'] != 'user') {
           <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="profile.php">Home</a>
+                <a class="nav-link" aria-current="page" href="./index.php">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">History</a>
@@ -36,9 +61,10 @@ if ($_SESSION['role'] != 'user') {
           </div>
         </div>
 </nav>
-    <h1>Data produk</h1>
     <div style="border: none !important" class="card m-1">
       <div class="card-body">
+        <div class="card-title d-flex justify-content-between">
+        </div>
     <table class="table">
         <thead class="table-primary">
             <tr>
@@ -52,10 +78,8 @@ if ($_SESSION['role'] != 'user') {
             <?php
                 require './config/db.php';
                 $base_url = "http://localhost/pemweb-otorisasi-main/";
-
                 $products = mysqli_query($db_connect,"SELECT * FROM products");
                 $no = 1;
-
                 while($row = mysqli_fetch_assoc($products)) {
             ?>
                 <tr>
@@ -63,24 +87,43 @@ if ($_SESSION['role'] != 'user') {
                     <td><?=$row['name'];?></td>
                     <td>Rp <?= number_format($row['price'], 0, ',', '.'); ?></td>
                     <!-- <td><img src="<?=$row['image'];?>" width="100"></td> -->
-                    <td><a class="btn btn-info" href="<?php echo $base_url ?><?=$row['image'];?>" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i> Lihat</a></td>
+                    <td>
+                    <button id="myImg" class="btn btn-info" data-image-url="<?php echo $base_url . $row['image']; ?>" data-bs-toggle="modal" data-bs-target="#imageModal">
+                        <i class="fa fa-eye" aria-hidden="true"></i> Lihat
+                    </button>
+                    </td>
                 </tr>
             <?php } ?>
         </tbody>
     </table>
+
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div style=" max-width: 80% !important;" class="modal-dialog">
+      <div class="modal-body">
+      <button type="button" style="float: right !important; background-color:aliceblue !important;" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <img class="modal-content" id="img01">
       </div>
     </div>
-    <script src="../plugin/js/bootstrap.min.js"></script>
+</div>
+      </div>
+    </div>
     <script>
-    function hapus(id_user){
-        var konfirmasi = confirm("Anda yakin ingin menghapus data ini?");
-        if(konfirmasi == true){
-            window.location.href = "backend/delete.php?id=" + id_user;
-        }
-        else {
-            return false;
-        }
+    var buttons = document.getElementsByClassName("btn-info");
+    var modal = document.getElementById("imageModal");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", function () {
+            modal.style.display = "block";
+            modalImg.src = this.getAttribute("data-image-url");
+            captionText.innerHTML = this.innerText;
+        });
+    }
+    var closeModalButton = document.getElementById("closeModalButton");
+    closeModalButton.onclick = function () {
+        modal.style.display = "none";
     }
 </script>
+<script src="plugin/js/bootstrap.min.js"></script>
 </body>
 </html>
