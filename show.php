@@ -123,11 +123,11 @@ if ($_SESSION['role'] != 'admin') {
       <form id="editForm" method="post" action="backend/edit.php?id=<?php echo $row['id']; ?>" enctype="multipart/form-data">
   <div class="mb-3">
     <label for="Name" class="form-label">Name</label>
-    <input type="text" name="name" class="form-control" id="Name" aria-describedby="emailHelp" required value="<?php echo $row['name']; ?>">
+    <input type="text" name="name" class="form-control" id="Name" aria-describedby="emailHelp" required>
   </div>
   <div class="mb-3">
     <label for="Price" class="form-label">Price</label>
-    <input type="number" name="price" class="form-control" id="Price" aria-describedby="emailHelp" required value="<?php echo $row['price']; ?>">
+    <input type="number" name="price" class="form-control" id="Price" aria-describedby="emailHelp" required>
   </div>
   <div class="mb-3">
     <label for="Image" class="form-label">Image</label>
